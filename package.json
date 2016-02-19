@@ -1,0 +1,39 @@
+{
+    "name": "biglrucache",
+    "description": "LRU Cache for Javascript",
+    "version": "1.0.0",
+    "keywords": [
+        "lru",
+        "cache",
+        "lrucache",
+        "lru-cache"
+    ],
+    "homepage": "https://github.com/vietor/biglrucache",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/vietor/biglrucache.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vietor/biglrucache/issues"
+    },
+    "author": {
+        "name": "Vietor Liu",
+        "email": "vietor.liu (at) gmail.com",
+        "url": "https://github.com/vietor"
+    },
+    "license": "MIT",
+    "main": "biglrucache.js",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "biglrucache.js"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+    }
+}
