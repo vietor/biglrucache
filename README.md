@@ -28,7 +28,7 @@ cache.del('a');
 |*Name*|*Type*|*Description*|*Requirement*|
 |---|---|---|---|
 |capacity|int|the capacity of cache keys, min: 3, default: 100000|N|
-|notify|function|notify when key be shrinked|N|
+|notify|function|processor a key be removed when cache shrinked|N|
 
 ### API
 
@@ -45,7 +45,7 @@ Delete a cache by key, not call the **notify**.
 Test a cache by key
 
 ### biglrucache#clear(key)
-Clear all cache
+Clear all cache, not call the **notify**.
 
 ### biglrucache#keys()
 Get all cached keys (string array)
