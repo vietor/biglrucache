@@ -1,0 +1,13 @@
+{
+    "maxerr": 50,
+    "predef": [
+        "module",
+        "define",
+        "window"
+    ],
+    "node": true,
+    "mocha": true,
+    "strict": true,
+    "eqnull": true,
+    "laxbreak": true
+}
