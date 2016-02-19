@@ -30,20 +30,35 @@ cache.del('a');
 |capacity|int|the capacity of cache keys, min: 3, default: 100000|N|
 |notify|function|notify when key be shrinked|N|
 
-
 ### API
 
 ### biglrucache#get(key)
 Get a cache by key.
 
 ### biglrucache#set(key, value)
-Set new or update cache by key, call *notify* when shrink keys.
+Set new or update cache by key, call **notify** when shrink keys.
 
 ### biglrucache#del(key)
-Delete a cache by key, not call the *notify*.
+Delete a cache by key, not call the **notify**.
 
 ### biglrucache#has(key)
 Test a cache by key
+
+### biglrucache#clear(key)
+Clear all cache
+
+### biglrucache#keys()
+Get all cached keys (string array)
+
+### biglrucache#info()
+Get information
+
+#### Result
+
+|*Name*|*Type*|*Description*|*Requirement*|
+|---|---|---|---|
+|capacity|int|the capacity of cache keys|Y|
+|length|int|The count of cache keys|Y|
 
 ## License
 
