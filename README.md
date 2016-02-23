@@ -44,6 +44,9 @@ Delete a cache by key, not call the **notify**.
 ### biglrucache#has(key)
 Test a cache by key
 
+### biglrucache#hit(key)
+Refresh a cache by key
+
 ### biglrucache#clear(key)
 Clear all cache, not call the **notify**.
 

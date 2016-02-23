@@ -109,6 +109,12 @@
                 remove(entry);
         };
 
+        this.hit = function(key) {
+            var entry = _lru_cache[key];
+            if (entry)
+                refresh(entry);
+        };
+
         this.keys = function() {
             var keys = [];
             var entry = _lru_head;

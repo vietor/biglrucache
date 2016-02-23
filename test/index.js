@@ -24,7 +24,7 @@ describe('BigLRUCache', function() {
         should(cache.info().length).be.equal(3);
         should(cache.keys()).be.eql(['b', 'c', 'd']);
 
-        cache.get('b');
+        cache.hit('b');
         cache.set('e', 'e');
         should(cache.info().length).be.equal(3);
         should(cache.keys()).be.eql(['d', 'b', 'e']);
