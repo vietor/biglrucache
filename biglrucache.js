@@ -58,19 +58,20 @@
             append(entry);
         }
 
-        function remove(entry) {
+        function remove(entry, action) {
             strip(entry);
-            --_count;
+            _count = _count - 1;
             delete _lru_cache[entry.k];
+            if (action)
+                action(entry.k, entry.v);
+            entry.k = null;
+            entry.v = null;
         }
 
         function shrink() {
             var entry = _lru_head;
-            if (entry) {
-                remove(entry);
-                if (notify)
-                    notify(entry.k, entry.v);
-            }
+            if (entry)
+                remove(entry, notify);
         }
 
         this.has = function(key) {
@@ -82,7 +83,7 @@
             var entry = _lru_cache[key];
             if (!entry) {
                 entry = new LRUEntry(key, value);
-                _count++;
+                _count = _count + 1;
                 if (_count > capacity)
                     shrink();
                 _lru_cache[key] = entry;
