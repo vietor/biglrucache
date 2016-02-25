@@ -17,10 +17,16 @@ $ npm install biglrucache
 var biglrucache = require('biglrucache');
 
 var cache = biglrucache(10, function(key, value) {});
-cache.set('a', 'a');
-cache.has('a');
-cache.get('a');
+cache.set('a', 1);
+cache.set('b', 2);
+cache.has('a'); // true
+cache.get('a'); // 1
+cache.keys(); // ['a', 'b']
+cache.keys(function(k, v) {return v < 2}); // ['a']
+cache.keys(function(k, v) {return v > 1}); // []
+cache.values(); // [1, 2]
 cache.del('a');
+cache.keys(); // ['b']
 ```
 
 ### Parameters
@@ -50,11 +56,16 @@ Refresh a cache by key
 ### biglrucache#clear(key)
 Clear all cache, not call the **notify**.
 
-### biglrucache#keys()
-Get all cached keys (string array)
-
 ### biglrucache#info()
 Get information
+
+### biglrucache#keys([predicate])
+Return cached keys array when *predicate* return true (*break* on return false).  
+The entry order from old to new.
+
+### biglrucache#values([predicate])
+Return cached values array when *predicate* return true (*break* on return false).  
+The entry order from old to new.
 
 #### Result
 

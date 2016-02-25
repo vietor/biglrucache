@@ -116,14 +116,30 @@
                 refresh(entry);
         };
 
-        this.keys = function() {
-            var keys = [];
+        function xeach(iteratee, predicate) {
             var entry = _lru_head;
             while (entry) {
-                keys.push(entry.k);
+                if (predicate && !predicate(entry.k, entry.v))
+                    break;
+                iteratee(entry);
                 entry = entry.n;
             }
+        }
+
+        this.keys = function(predicate) {
+            var keys = [];
+            xeach(function(entry) {
+                keys.push(entry.k);
+            }, predicate);
             return keys;
+        };
+
+        this.values = function(predicate) {
+            var values = [];
+            xeach(function(entry) {
+                values.push(entry.v);
+            }, predicate);
+            return values;
         };
 
         this.clear = function() {

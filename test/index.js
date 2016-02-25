@@ -3,8 +3,8 @@
 var should = require('should');
 var BigLRUCache = require('../biglrucache');
 
-describe('BigLRUCache', function() {
-    it('BigLRUCache()', function() {
+describe('biglrucache', function() {
+    it('basic', function() {
         var cache = BigLRUCache(3);
         should(cache.info().length).be.equal(0);
         should(cache.info().capacity).be.equal(3);
@@ -35,5 +35,22 @@ describe('BigLRUCache', function() {
 
         cache.clear();
         should(cache.info().length).be.equal(0);
+    });
+
+    it('complex', function() {
+        var cache = BigLRUCache(3);
+
+        cache.set('a', 1);
+        cache.set('b', 2);
+        cache.set('c', 3);
+        should(cache.keys(function(k, v) {
+            return k == 'b';
+        })).be.eql([]);
+        should(cache.keys(function(k, v) {
+            return v < 3;
+        })).be.eql(['a', 'b']);
+        should(cache.values(function(k, v) {
+            return v < 3;
+        })).be.eql([1, 2]);
     });
 });
