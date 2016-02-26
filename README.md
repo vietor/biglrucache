@@ -59,6 +59,13 @@ Clear all cache, not call the **notify**.
 ### biglrucache#info()
 Get information
 
+#### Result
+
+|*Name*|*Type*|*Description*|*Requirement*|
+|---|---|---|---|
+|capacity|int|the capacity of cache keys|Y|
+|length|int|The count of cache keys|Y|
+
 ### biglrucache#keys([predicate])
 Return cached keys array when *predicate* return true (*break* on return false).  
 The entry order from old to new.
@@ -67,12 +74,6 @@ The entry order from old to new.
 Return cached values array when *predicate* return true (*break* on return false).  
 The entry order from old to new.
 
-#### Result
-
-|*Name*|*Type*|*Description*|*Requirement*|
-|---|---|---|---|
-|capacity|int|the capacity of cache keys|Y|
-|length|int|The count of cache keys|Y|
 
 ## License
 
