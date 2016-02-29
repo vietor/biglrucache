@@ -54,14 +54,16 @@
         }
 
         function refresh(entry) {
-            strip(entry);
-            append(entry);
+            if (entry !== _lru_tail) {
+                strip(entry);
+                append(entry);
+            }
         }
 
         function remove(entry, action) {
             strip(entry);
-            _count = _count - 1;
             delete _lru_cache[entry.k];
+            _count -= 1;
             if (action)
                 action(entry.k, entry.v);
             entry.k = null;
@@ -83,7 +85,7 @@
             var entry = _lru_cache[key];
             if (!entry) {
                 entry = new LRUEntry(key, value);
-                _count = _count + 1;
+                _count += 1;
                 if (_count > capacity)
                     shrink();
                 _lru_cache[key] = entry;
