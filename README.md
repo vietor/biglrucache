@@ -27,9 +27,15 @@ $ bower install biglrucache
 
 ## Usage
 
+**Require by Node.js**
+
 ``` javascript
 var biglrucache = require('biglrucache');
+```
 
+**Basic usage**
+
+``` javascript
 var cache = biglrucache(10, function(key, value) {});
 cache.set('a', 1);
 cache.set('b', 2);
