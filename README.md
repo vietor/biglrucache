@@ -7,8 +7,22 @@ LRU Cache for Javascript
 
 ## Installation
 
+**Node.js:**
+
 ```sh
 $ npm install biglrucache
+```
+
+**Bower:**
+
+```sh
+$ bower install biglrucache
+```
+
+**Browser:**
+
+```
+<script src="/pathTo/biglrucache.js"></script>
 ```
 
 ## Usage
