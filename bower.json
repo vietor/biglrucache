@@ -1,0 +1,28 @@
+{
+    "name": "biglrucache",
+    "description": "LRU Cache for Javascript",
+    "main": "biglrucache.js",
+    "authors": [
+        "Vietor Liu <vietor.liu@gmail.com>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "lru",
+        "cache",
+        "lrucache",
+        "lru-cache"
+    ],
+    "homepage": "https://github.com/vietor/biglrucache",
+    "moduleType": [
+        "amd",
+        "globals",
+        "node"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ]
+}
