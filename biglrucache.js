@@ -77,8 +77,7 @@
         }
 
         this.has = function(key) {
-            var entry = _lru_cache[key];
-            return entry !== null;
+            return _lru_cache.hasOwnProperty(key);
         };
 
         this.set = function(key, value) {
